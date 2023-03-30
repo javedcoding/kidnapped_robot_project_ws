@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="bicycle" static="true">
+    <link name="bicycle_link">
+      <inertial>
+        <pose>0.0 0.1 0.0 0.0 0.0 0.0 </pose> 
+        <mass value="1.0"/>
+        <inertia>
+          <ixx>0.05</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.05</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.05</izz>
+        </inertia>
+      </inertial>
+      <collision name="bicycle_collision" >
+          <geometry>
+              <mesh >
+                <uri>model://bicycle/meshes/bicycle.dae</uri>
+              </mesh>
+          </geometry>
+      </collision>
+      <visual name="bicycle_visual" cast_shadows="false">
+          <geometry>
+            <mesh>
+              <uri>model://bicycle/meshes/bicycle.dae</uri>
+            </mesh>
+          </geometry>
+      </visual>
+  </link>
+  <scale> 0.00000001 0.00000001 0.00000001 </scale>
+  </model>
+</sdf>

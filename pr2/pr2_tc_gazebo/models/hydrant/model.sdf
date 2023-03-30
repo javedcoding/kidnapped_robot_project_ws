@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="hydrant" static="true">
+    <link name="hydrant_link">
+      <inertial>
+        <pose>0.0 0.1 0.0 0.0 0.0 0.0 </pose> 
+        <mass value="1.0"/>
+        <inertia>
+          <ixx>0.05</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.05</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.05</izz>
+        </inertia>
+      </inertial>
+      <collision name="hydrant_collision" >
+          <geometry>
+              <mesh >
+                <uri>model://hydrant/meshes/secondhydrant.dae</uri>
+              </mesh>
+          </geometry>
+      </collision>
+      <visual name="hydrant_visual" cast_shadows="false">
+          <geometry>
+            <mesh>
+              <uri>model://hydrant/meshes/secondhydrant.dae</uri>
+            </mesh>
+          </geometry>
+      </visual>
+  </link>
+  </model>
+</sdf>

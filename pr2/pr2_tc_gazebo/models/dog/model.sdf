@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="dog" static="true">
+    <link name="dog">
+      <inertial>
+        <pose>0.03 0.0 0.0035 0.0 0.0 0.0 </pose> 
+        <mass value="10.0"/>
+        <inertia>
+          <ixx>0.05</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.05</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.05</izz>
+        </inertia>
+      </inertial>
+      <collision name="dog_collision">
+          <geometry>
+              <mesh >
+                <uri>model://dog/meshes/dog.dae</uri>
+              </mesh>
+          </geometry>
+      </collision>
+      <visual name="dog_visual" cast_shadows="false">
+          <geometry>
+            <mesh>
+              <uri>model://dog/meshes/dog.dae</uri>
+            </mesh>
+          </geometry>
+      </visual>
+  </link>
+  </model>
+</sdf>
