@@ -3,7 +3,7 @@ This is a project for solving kidnapped robot problem using computer vision usin
 #Installation
 First we need to install ROS. the compatibility of ROS OS and Nvidia graphics card is cumbersome. So we chose Ubuntu 20.04 (focal fossa), ros noetic, Cuda dnn 11.8, Cuda 515, tensorRT 8.5.3
 To install ros do these commands available in roswiki. Before progressing turn on software updater's Source code and Canonical Partners download option
-'''
+'''json
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt install curl # if you haven't already installed curl
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
@@ -18,7 +18,7 @@ sudo rosdep init
 rosdep update
 '''
 To download turtlebot3 follow these commands from emanual.robotis.com
-'''
+'''json
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
@@ -36,7 +36,7 @@ $ sudo apt-get install ros-noetic-turtlebot3
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 '''
 To install cuda search for the cuda toolkit of that version
-'''
+'''json
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
 sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
 wget http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb
@@ -48,7 +48,7 @@ sudo apt-get -y install cuda
 Check tensorflow compatibility with cuda driver here https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html
 Download corresponding cudnn file also from Nvidia account
 Now install tensorRT
-'''
+'''json
 sudo apt-get install tensorrt
 sudo apt-get install libnvinfer-lean8
 sudo apt-get install libnvinfer-vc-plugin8
@@ -66,7 +66,7 @@ sudo apt-get install onnx-graphsurgeon
 dpkg-query -W tensorrt
 '''
 Now download this repository and create a workspace folder to run these code
-'''
+'''json
 mkdir catkin_ws
 cd catkin_ws
 mkdir src
@@ -77,7 +77,7 @@ cd src
 After downloading this repository file inside the workspace download corresponding srdf model from the link below into /pr2/pr2_tc_gazebo/models/ folder:
 https://drive.google.com/drive/folders/1jw35blIMJ4rWBSyOFR4qXUlZ1oZoBsPh?usp=share_link
 Run the project using these commands:
-'''
+'''json
 roslaunch pr2_tc_gazebo main_standing_detection.launch
 roslaunch room_detection_pkg dark_net_3d.launch
 rosrun room_detection_pkg detector.py
